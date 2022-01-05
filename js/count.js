@@ -1,8 +1,14 @@
-/* get count id from my html */
-
-const countElement = document.getElementById('count');
-
-function updateCount() {
-
-
-}
+window.addEventListener('load', (event) => {
+    let visitorCount = 0;
+    fetch('', {
+        mode: 'cors'
+    })
+    .then(response => {
+        return response.json()
+    })
+    .then(data => {
+        const visitorCount = data.
+        document.getElementById('count').innerText = visitorCount;
+    })
+    return visitorCount;
+});
