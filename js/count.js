@@ -1,14 +1,21 @@
-window.addEventListener('load', (event) => {
-    let visitorCount = 0;
-    fetch('', {
-        mode: 'cors'
-    })
+window.addEventListener('DOMContentLoaded', (event) => {
+    getVisitCount();
+});
+
+
+const functionApi = 'https://challengeresumeforbenny.azurewebsites.net/api/HttpTriggerBenny'; 
+
+const getVisitCount = () => {
+    let count = 0;
+    fetch(functionApi)
     .then(response => {
         return response.json()
     })
-    .then(data => {
-        const visitorCount = data.
-        document.getElementById('count').innerText = visitorCount;
-    })
-    return visitorCount;
-});
+    .then(response => {
+        count = response.count;
+        document.getElementById('count').innerText = count;
+    }).catch(function(error) {
+        console.log(error);
+      });
+    return count;
+}
