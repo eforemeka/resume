@@ -17,6 +17,12 @@ jobs:
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.MY_AZURE_CREDS }}
+          
+    - name: Upload to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name bennyresumestorage --connection-string DefaultEndpointsProtocol=https;AccountName=bennyresumestorage;AccountKey=+SrJXjr2eIBBkMIix8Wo75YuM7i7gycMLbwL0wIJ3LBFfTcyMQKcW56ADeDzwfWXKrJjlLDUhcv5PmE7OHdPOw==;EndpointSuffix=core.windows.net --auth-mode key -d '$web' -s .
 
   # Azure logout
     - name: logout
