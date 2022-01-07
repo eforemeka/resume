@@ -22,7 +22,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name bennyresumestorage --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name bennyresumestorage --connection-string DefaultEndpointsProtocol=https;AccountName=bennyresumestorage;AccountKey=+SrJXjr2eIBBkMIix8Wo75YuM7i7gycMLbwL0wIJ3LBFfTcyMQKcW56ADeDzwfWXKrJjlLDUhcv5PmE7OHdPOw==;EndpointSuffix=core.windows.net --account-key +SrJXjr2eIBBkMIix8Wo75YuM7i7gycMLbwL0wIJ3LBFfTcyMQKcW56ADeDzwfWXKrJjlLDUhcv5PmE7OHdPOw== --auth-mode key -d '$web' -s .
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
