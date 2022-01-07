@@ -29,7 +29,7 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name resume --name https://benny-resume.azureedge.net --resource-group Challenge
+           az cdn endpoint purge --content-paths  "/*" --profile-name resume --name benny-resume --resource-group Challenge
 
   # Azure logout
     - name: logout
