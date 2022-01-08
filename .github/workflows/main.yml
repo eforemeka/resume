@@ -17,19 +17,18 @@ jobs:
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.MY_AZURE_CREDS }}
-
+          
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name bennyresumestorage --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name bennyresumestorage --auth-mode key -d '$web' -s . --connection-string 'DefaultEndpointsProtocol=https;AccountName=bennyresumestorage;AccountKey=+SrJXjr2eIBBkMIix8Wo75YuM7i7gycMLbwL0wIJ3LBFfTcyMQKcW56ADeDzwfWXKrJjlLDUhcv5PmE7OHdPOw==;EndpointSuffix=core.windows.net'
+            
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
         inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "resume" --name "benny-resume" --resource-group "Challenge"
+           az cdn endpoint purge --content-paths  "/*" --profile-name "resume" --name "benny-resume" --resource-group "ResumeChallenge"
 
   # Azure logout
     - name: logout
