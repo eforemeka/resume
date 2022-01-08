@@ -179,7 +179,7 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
+ul#nav li.current a { /*color: #F06000;*/ color: #5EE703; }
 
 
 /* ------------------------------------------------------------------ */
@@ -207,8 +207,8 @@ ul#nav li.current a { color: #F06000; }
 }
 #about .profile-pic {
    position: relative;
-   width: 120px;
-   height: 120px;
+   width: 652px;
+   height: 100%;
    border-radius: 100%;
 }
 #about .contact-details { width: 41.66667%; }
@@ -971,7 +971,8 @@ footer .social-links li {
     margin: 0;
     padding: 0;
     margin-left: 42px;
-    color: #F06000;
+    /* color: #F06000; */
+    color: #5EE703;
 }
 
 footer .social-links li:first-child { margin-left: 0; }
