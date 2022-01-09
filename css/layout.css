@@ -264,7 +264,7 @@ ul#nav li.current a { /*color: #F06000;*/ color: #5EE703; }
 .education, .work {
    margin-bottom: 48px;
    padding-bottom: 24px;
-   border-bottom: 1px solid #E8E8E8;
+   /* border-bottom: 1px solid #E8E8E8; */
 }
 #resume .info {
    font: 16px/24px 'librebaskerville-italic', serif;
@@ -284,6 +284,12 @@ ul#nav li.current a { /*color: #F06000;*/ color: #5EE703; }
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
+
+
+/* I removed the main-col class and replaced with the adjust class to apply padding */
+.adjust {
+   padding-bottom: 60px;
+}
 
 .bars {
 	width: 95%;
