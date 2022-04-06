@@ -21,6 +21,7 @@ jobs:
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
+        azcliversion: v2.33.1
         inlineScript: |
             az storage blob upload-batch --account-name bennyresumestorage --auth-mode key -d '$web' -s . --connection-string 'DefaultEndpointsProtocol=https;AccountName=bennyresumestorage;AccountKey=+SrJXjr2eIBBkMIix8Wo75YuM7i7gycMLbwL0wIJ3LBFfTcyMQKcW56ADeDzwfWXKrJjlLDUhcv5PmE7OHdPOw==;EndpointSuffix=core.windows.net'
             
